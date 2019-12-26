@@ -28,7 +28,7 @@ public class InsertionSort {
 	}
 	
 	public static void main(String[] args) {
-		int arr[]= {65,44,33,22,11};
+		int arr[]= {77,88,99,100,65,44,133,22,11};
 		insertionsort(arr);
 		printarray(arr);
 
