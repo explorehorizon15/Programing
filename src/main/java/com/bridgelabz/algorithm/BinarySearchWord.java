@@ -25,15 +25,18 @@ public class BinarySearchWord {
     }
     System.out.println();
     Scanner src=new Scanner(System.in);
+    System.out.println("Enter key :");
     String key=src.nextLine();
+   
     for(int k=0;k<a.length;k++) {
-    	if(key.compareTo(a[k])==0) {
+    	
+    	if(key.compareTo(a[k])==0 || key.equalsIgnoreCase(a[k])) {
     		
-    		System.out.println(key+"Is On index no:"+k);
+    		System.out.println(key+ "Is On index no:"+k);
     		
-    	}
+    	
     }
-    
+    }
     
 	}
 
