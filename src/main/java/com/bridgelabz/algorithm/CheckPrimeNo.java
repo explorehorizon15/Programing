@@ -9,19 +9,19 @@ public static int primeno() {
 	int m=n/2;
 	int flag=0;
 	if(n==0||n==1) {
-		System.out.println(n+" No is not prime.");
+		System.out.println(n+"\t No is not prime.");
 	}
 	else {
 		for(int i=2;i<m;i++) {
 			if(n%i==0) {
 				flag=1;
-				System.out.println(n+"No is not prime.");
+				System.out.println(n+"\tNo is not prime.");
 			}
 		}
 	}
 	
 	if(flag==0) {
-		System.out.println(n+"No IS Prime");
+		System.out.println(n+"\tNo IS Prime");
 	}
 	
 

@@ -32,7 +32,7 @@ public class BinarySearchWord {
     	
     	if(key.compareTo(a[k])==0 || key.equalsIgnoreCase(a[k])) {
     		
-    		System.out.println(key+ "Is On index no:"+k);
+    		System.out.println(key+ "\tIs On index no:"+k);
     		
     	
     }
