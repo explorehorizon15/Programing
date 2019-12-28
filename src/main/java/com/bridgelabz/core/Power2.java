@@ -4,11 +4,14 @@ public class Power2 {
 
     public static int power2(int n) {
         System.out.println("Enter a No:");
-        for (int i = 0; i < n; i++) {
-            System.out.println(i + "=" + Math.pow(2, i));
+        int power=0;
+        for (int i = 1; i <= n; i++) {
+        	power= (int)Math.pow(2, i);
+            System.out.println(i + "=" +power );
 
         }
-        return n;
+        System.out.println(power);
+        return power;
     }
 
     public static void main(String args[]) {
