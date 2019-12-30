@@ -1,5 +1,7 @@
 package junittest;
 
+
+
 import java.util.Scanner;
 
 public class Testunit {
