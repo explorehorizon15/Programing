@@ -8,7 +8,6 @@ public class DisplayPrimeNo {
 		int i=0;
 		int n=1000;
 		int num=0;
-		String a1[];
 		String prime="";
 		for( i=1;i<=n;i++) {
 			int counter=0;
@@ -28,6 +27,7 @@ public class DisplayPrimeNo {
        arr=prime.toCharArray();
        System.out.println("Prime no in character array are:");
        System.out.println(arr);
+       
        
 	}
 

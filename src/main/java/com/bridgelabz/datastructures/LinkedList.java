@@ -1,26 +1,92 @@
 package com.bridgelabz.datastructures;
 
 public class LinkedList {
+public class Node{
+	int data;
+	Node next;
+}
+Node head;
+public void insert(int data) {
+	Node node= new Node();
+	node.data=data;
+	node.next=null;
+	if(head==null) {
+		head=node;
+	}else {
+		Node n=head;
+		while(n.next!=null) {
+			n=n.next;
+		}
+	n.next=node;	
+	}	
+	
+}
+public void insertAtstart(int data) {
+	Node n= new Node();
+	n.data=data;
+	n.next=null;
+	n.next=head;
+	head=n;
+}
+public void insertAtpos(int pos,int data) {
+	if(pos==0) {
+		insertAtstart(data);
+	}else {
+	
+	Node n=new Node();
+	n.data=data;
+	n.next=null;
+    
+	Node m=head;
+	for(int i=0;i<pos-1;i++) {
+		m=m.next;
+	}
+	n.next=m.next;
+	m.next=n;
+	}
+}
 
-	public static void main(String[] args) {
-	int fact=1;
-//		int n = 5;
-//		for (int i = 1; i <= n; i++) {
-//			fact = fact * i;
-//		}
-//		System.out.println("Factorial No:" + fact);
-	System.out.println("using Recursion");
-	int op= fact(7);
-	System.out.println("Factorial No:" + op);
-	System.out.println("using Recursion="+fact(8));
+public void delete(int pos) {
+	if(pos==0) {
+		head=head.next;
+		
+	}else {
+		Node n=head;
+		Node n1=null;
+		for(int i=0;i<pos-1;i++) {
+			n=n.next;
+		}
+		n1=n.next;
+		n.next=n1.next;
+		System.out.println("n1::"+pos+"is:"+n1.data);
 	}
 	
-	public static int fact(int n) {
-		if(n<=0) {
-			return 1;
-		}
-			int o= n*fact(n-1);
+}
+public void show(){
+	Node node=head;
+	while(node.next!=null) {
+		System.out.println(node.data);
+		node=node.next;
 			
-		return o;
 	}
+	System.out.println(node.data);
+}	
+public static void main(String args[]) {
+	LinkedList list=new LinkedList();
+	list.insert(15);
+	list.insert(25);
+	list.insert(35);
+	list.insert(45);
+	list.insertAtstart(85);
+	list.insertAtpos(2,30);
+	list.insertAtpos(1,91);
+	list.delete(0);
+	list.delete(1);
+	list.delete(2);
+	list.delete(3);
+	list.insertAtpos(2,37);
+	
+	list.show();
+}
+
 }
