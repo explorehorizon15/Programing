@@ -8,7 +8,7 @@ public static LinkedList fibo() {
 	 list.insert(n1); 
 	 list.insert(n2);
 	    
-	 for(i=2;i<count;++i)//loop starts from 2 because 0 and 1 are already printed    
+	 for(i=2;i<count;++i)  
 	 {    
 	  n3=n1+n2;    
 	  list.insert(n3);    

@@ -1,13 +1,15 @@
 package com.bridgelabz.datastructures;
 
 public class Factor {
-	
+static	Stack s=new Stack();
 public static Stack factor() {
-	Stack s=new Stack();
+	
 	int n=15;
+	
 	for(int i=1;i<=n;i++) {
 		if(n%i==0) {
 			s.push(i);
+			
 		}
 	}
 	return s;
