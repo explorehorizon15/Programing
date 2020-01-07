@@ -19,27 +19,31 @@ public class PrimeArray {
 		int index=0;
 		for(int i=0;i<n;i++) {
 			if(isPrime(i)) {
+				
 				arr[index++]=i;
 
+		
 			}
-			
 
 		}
 		return arr;
 	}
+	
+
 	
 	public static int[] print(int[]a1,int n) {
 		
 		for(int i=0;i<n;i++) {
 			System.out.print(a1[i]+" ");
 		}
+		System.out.println();
 		return a1;
 	}
 	public static void main(String[] args) {
 
 		int array[]=generate(200);
 		print(array,50);
-
+		
 	}
 
 }
