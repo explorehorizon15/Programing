@@ -26,7 +26,7 @@ public void insert(int data) {
 public void insertAtstart(int data) {
 	Node n= new Node();
 	n.data=data;
-	n.next=null;
+//	n.next=null;
 	n.next=head;
 	head=n;
 	size++;
