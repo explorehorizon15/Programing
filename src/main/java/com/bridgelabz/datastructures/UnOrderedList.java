@@ -36,7 +36,7 @@ public class UnOrderedList<T> {
 		 // Take the Input from the file.
 		//Put appropriate path location in FileReader.
 		try{
-			FileReader fr=new FileReader("/home/admin1/workspace-pro/Programing/src/main/java/com/bridgelabz/datastructures/string.txt");
+			FileReader fr=new FileReader("/home/admin1/workspace-pro/Programing/src/main/java/com/bridgelabz/datastructures/string");
 			BufferedReader br=new BufferedReader(fr);
 			BufferedReader b=new BufferedReader(new InputStreamReader(System.in));
 			UnOrderedList<String> list=new UnOrderedList<>();
@@ -157,7 +157,7 @@ public class UnOrderedList<T> {
 		Node<T> current=head;
 		try
 		{
-			FileWriter fw=new FileWriter("/home/admin1/workspace-pro/Programing/src/main/java/com/bridgelabz/datastructures/string.txt");
+			FileWriter fw=new FileWriter("/home/admin1/workspace-pro/Programing/src/main/java/com/bridgelabz/datastructures/string");
 			while(current!=null)
 			{
 				fw.write(current.data+" ");

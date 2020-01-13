@@ -10,7 +10,7 @@ public class OrderedList<T extends Comparable<T>> {
   // Take the Input from the file.
 		//Put appropriate path location in FileReader.
 		try{
-			FileReader fr=new FileReader("/home/admin1/workspace-pro/Programing/src/main/java/com/bridgelabz/datastructures/number.txt");
+			FileReader fr=new FileReader("/home/admin1/workspace-pro/Programing/src/main/java/com/bridgelabz/datastructures/number");
 			BufferedReader br=new BufferedReader(fr);
 			BufferedReader b=new BufferedReader(new InputStreamReader(System.in));
 			OrderedList<Integer> list=new OrderedList<Integer>();  //Creating OrderedList Integer Object. 
