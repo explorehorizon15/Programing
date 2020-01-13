@@ -1,8 +1,8 @@
 package com.bridgelabz.datastructures;
 
 public class Factor {
-static	Stack s=new Stack();
-public static Stack factor() {
+static	StackNongeneric s=new StackNongeneric();
+public static StackNongeneric factor() {
 	
 	int n=15;
 	
@@ -16,7 +16,7 @@ public static Stack factor() {
 }
 	
 	public static void main(String[] args) {
-		Stack s=factor();
+		StackNongeneric s=factor();
 		s.show();
 	}
 

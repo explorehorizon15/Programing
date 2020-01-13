@@ -1,80 +1,105 @@
 package com.bridgelabz.datastructures;
 
-public class Stack {
-	int Stack[]=new int[10];
-	int top=0;
-	
-	public void push(int data) {
-		if(top==10) {
-			System.out.println("Stack is Full!");
-		}else {
-		Stack[top]=data;
-		top++;
-		}
-	}
-	
-	public int pop(){
-		 int data=0;
-		if(isEmpty()) {
-			System.out.println("Stack is Empty!");
-		}else {
-	   
-		top--;
-		data=Stack[top];
-		Stack[top]=0;
-		
-	}
-		return data;
-	}
-	
-	public int peek() {
-		int data;
-		data=Stack[top-1];
-		return data;
-	}
-	
-	public int size() {
-		return top;
-	}
-	
-	public boolean isEmpty() {
-		return top<=0;
-	}
-    
-	public void show() {
-		
-		for (int arr:Stack) {
-			System.out.print(arr+ " ");
-		}
-		System.out.println();
-	}
-	public static void main(String[] args) {
-		 Stack s=new Stack();
-		 System.out.println("size= "+s.size());
-         System.out.println("isempty= " + s.isEmpty());
-         s.push(15);
-         s.push(25);
-         s.push(35);
-         s.push(45);
-         System.out.println("size= "+s.size());
-         System.out.println("isempty= " + s.isEmpty());
-         s.show();
-         System.out.println("popped elemnt are  "  + s.pop());
-         s.show();
-         System.out.println("current element:" +s.peek());
-         System.out.println("size= "+s.size());
-         System.out.println("isempty= " + s.isEmpty());
-         s.push(13);
-         s.push(24);
-         s.push(36);
-         s.push(47);
-         s.push(18);
-         s.push(27);
-         s.push(39);
-         s.push(40);
-         s.show();
-         System.out.println("current element:" +s.peek());
-         System.out.println("size= "+s.size());
-	}
 
-}
+	public class Stack<T> {
+		
+		private Node<T> head;
+		private int size;
+		private  Node<T> last;
+		
+		public class Node<T> {
+		      private T data;
+		      private Node<T> next;
+		      
+		      public Node(T data){
+		    	  this.data=data;
+		      }
+		      
+		      public T getData() {
+		    		return data;
+		    	}
+		      
+		      public Node<T> getNext(){
+		    	  return next;
+		      }
+		      
+		      public void setNext(Node<T> next) {
+		          this.next = next;
+		      }
+		      
+		}
+
+		public boolean isEmpty() {
+			if(head==null && last==null) return true;
+			else    return false;
+		}
+		
+		public void push(T data) {
+			Node<T> newnode=new Node<T>(data);
+			if(head==null)  head=newnode;
+			else {
+				Node<T> temp=head;
+				while(temp!=null) {
+					if(temp.next==null)  {
+						temp.next=newnode;
+						break;
+					}
+					temp=temp.getNext();
+				}
+			}
+		}
+		
+		public T popFirst() {
+			  if(isEmpty())  return null;
+			  Node<T> n=head;
+			  head=n.next;  
+			return n.getData();
+		}
+		
+		public T popLast() {
+			T data=null;
+			Node<T> n=head;
+			Node<T> prev=null;
+			while(n.getNext()!=null) {
+				 prev = n; 
+		         n = n.getNext(); 
+			}
+			prev.next = n.next;
+			return n.getData();
+		}
+		
+		public T peek() {
+			  if(head.getData()==null) 
+				  return null;
+			  else 
+				  return head.getData();
+		  }
+		
+		 public int size() {
+		     	Node<T> n=head;
+			     while(n!=null) {
+			      	size++;
+				      n=n.next;
+			          }
+			      return size;
+		}
+		 
+		 public void display() {    
+			    
+			    if(head == null) {  
+			        System.out.println("List is empty");  
+			        return;  
+			    }  
+			    while(head != null) {  
+			         System.out.print(head.getData() + " ");  
+			        head = head.getNext();  
+			    }  
+//			    System.out.print();  
+			}
+		 
+		/*public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	}*/
+
+	} 
+
