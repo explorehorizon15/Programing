@@ -9,16 +9,16 @@ public class MergeSort {
 		int L[]=new int[n1];
 		int R[]=new int[n2];
 		
-		for (int i=0;i<n1;i++)
+		for (int i=0;i<n1;++i)
 		{
 			L[i]=arr[left+i];
 		}
-		for(int j=0;j<n2;j++) {
+		for(int j=0;j<n2;++j) {
 			R[j]=arr[mid+1+j];
 		}
 		int i=0,j=0;
 		int k=left;
-		while(i<left&&j<right) {
+		while(i<n1&&j<n2) {
 			if(L[i]<=R[j]) {
 				arr[k]=L[i];
 				i++;
@@ -29,12 +29,12 @@ public class MergeSort {
 			k++;
 		}
 		
-		while(i<left) {
+		while(i<n1) {
 		arr[k]=L[i];	
 			i++;
 			k++;
 		}
-		while(j<right) {
+		while(j<n2) {
 			arr[k]=R[j];
 			j++;
 			k++;
@@ -43,28 +43,34 @@ public class MergeSort {
 	}
 	public static void sort(int arr[],int left,int right)  {
 		
-		left=0;
-		right=arr.length;
-		int mid1=(left+right)/2;
+		
 		if(left<right) {
-		int mid=mid1;
+		int mid=(left+right)/2;
 		
 		sort(arr,left,mid);
 		sort(arr,mid+1,right);
 		merge(arr,left,mid,right);
 		}		
 	}
+	 static void print(int arr[]) {
+		 int n=arr.length;
+		 for(int i =0; i<arr.length;i++)  
+			{  
+			    System.out.print(arr[i]+" ");  
+			}  
+		 System.out.println();
+	 }
 
 	public static void main(String[] args)  {
 	
 	int arr[]= {25,54,85,97,75,21,34,61};
-	sort(arr,0,arr.length);
+	int n=arr.length;
+	System.out.println("Given array:");
+	print(arr);
+	sort(arr,0,n-1);
 	System.out.println("Sorted array are:");
-	System.out.println("\nSorted array");  
-	for(int i =0; i<arr.length;i++)  
-	{  
-	    System.out.println(arr[i]+"");  
-	}  
+	print(arr);
+	
 	
 	}
 

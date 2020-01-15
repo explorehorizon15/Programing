@@ -6,7 +6,7 @@ import java.util.LinkedList;
 
 public class Palindrome {
 	Queue queue= new LinkedList();
-	public   void palindrome() {
+	public void palindrome() {
 		Scanner src=new Scanner(System.in);
 		String s1=src.next();
 		String s2="";

@@ -6,7 +6,7 @@ public class Factors {
 	 public static int factors(int n) {
 	        
 	        int fact = 1;
-	        for (int i = 1; i < n; i++) {
+	        for (int i = 1; i <= n; i++) {
 	            fact = (int) fact * i;
 	        }
 	        System.out.println("Factorial No:" + fact);
@@ -16,7 +16,7 @@ public class Factors {
 	    }
 
 	    public static void main(String args[]) {
-	        factors(6);
+	        factors(5);
 	    }
 
 }
